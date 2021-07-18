@@ -1,11 +1,17 @@
 import 'package:app01/modules/bmi/bmi_screen.dart';
+import 'package:app01/modules/counter/counter.dart';
 import 'package:app01/modules/login/LoginScreen.dart';
+import 'package:app01/shared/bloc_observer.dart';
+import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'layout/home_layout.dart';
 import 'modules/bmi_result/bmiResult_screen.dart';
 import 'modules/users/users_screen.dart';
 
-main() => runApp(MyApp());
+main() {
+  Bloc.observer = MyBlocObserver();
+  runApp(MyApp());
+}
 
 class MyApp extends StatefulWidget {
   @override
